@@ -1,15 +1,15 @@
 {
   "compilerOptions": {
-    "module": "commonjs",          
-    "target": "es6",             
-    "outDir": "./dist",            
-    "strict": true,
-    "moduleResolution": "node",
+    "target": "ES2020",                 // Target modern JavaScript
+    "module": "ESNext",                 // Use ES Modules
+    "moduleResolution": "node",         // Resolve modules as Node.js does
+    "esModuleInterop": true,            // Enable interop between CommonJS and ES modules
     "skipLibCheck": true,
-    "resolveJsonModule": true,
-    "sourceMap": true,
-    "esModuleInterop": true     
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "outDir": "./dist",                 // Output directory
+    "rootDir": "./src"                  // Root directory for source files
   },
-  "include": ["src/**/*.ts"],    
-  "exclude": ["node_modules"]
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
 }

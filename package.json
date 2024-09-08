@@ -1,14 +1,11 @@
 {
   "name": "moonpig-tech-test-node-backend",
   "version": "0.1.0",
-  "description": "Mooonpig Node Backend Technical Test",
-  "main": "index.ts",
+  "description": "Moonpig Node Backend Technical Test",
+  "main": "dist/index.js",
   "type": "module",
-  "author": "Moonpig",
-  "license": "UNLICENSED",
-  "private": true,
   "scripts": {
-    "dev": "ts-node-dev src/index.ts",
+    "dev": "ts-node-dev --loader ts-node/esm --respawn --transpile-only src/index.ts",
     "start": "node dist/index.js",
     "build": "tsc",
     "test": "jest"
@@ -19,13 +16,14 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.12",
+    "@types/jest": "^29.5.12",
     "@types/node": "^14.14.10",
     "@types/supertest": "^2.0.10",
-    "jest": "^26.6.3",
-    "supertest": "^6.0.0",
-    "ts-jest": "^26.4.4",
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
-    "ts-node-dev": "1.1.8",
+    "ts-node-dev": "^2.0.0",
     "typescript": "^5.5.4"
   }
 }
