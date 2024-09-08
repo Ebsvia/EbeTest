@@ -4,6 +4,7 @@ import {
   fetchSizes,
   fetchTemplates,
 } from "../services/dataService";
+import { calculatePrice, transformPages } from "../utils/cardUtils";
 
 export const getCardById = async (req: Request, res: Response) => {
   const { cardId, sizeId } = req.params;
@@ -35,11 +36,15 @@ export const getCardById = async (req: Request, res: Response) => {
 
     const size = sizes.find((s: any) => s.id === sizeId);
     const priceMultiplier = size ? size.priceMultiplier : 1;
-
+    const price = calculatePrice(card.basePrice, priceMultiplier);
+    const pages = transformPages(card.pages, templates);
     res.json({
       title: card.title,
       size: sizeId || "default",
       availableSizes,
+      imageUrl: pages[0].imageUrl,
+      price,
+      pages,
     });
   } catch (err) {
     res.status(500).json({ error: "Error fetching card data" });

@@ -1,13 +1,10 @@
-import * as express from "express";
+import express from "express";
+import { getAllCards } from "./controllers/cardsController";
+import { getCardById } from "./controllers/cardController";
 
-export const app = express()
+const router = express.Router();
 
-app.set('json spaces', 2);
+router.get("/cards", getAllCards);
+router.get("/cards/:cardId/:sizeId?", getCardById);
 
-app.get('/cards', async () => {
-  // respond with a list of cards
-})
-
-app.get('/cards/:cardId/:sizeId?', () => {
-  // respond with card by id
-})
+export default router;

@@ -1,7 +1,15 @@
-import { app } from './server'
+import express from "express";
+import router from "./server";
 
-const PORT = 7000
+const app = express();
+const PORT = 8080;
 
-app.listen(PORT, async () => {
-  console.log(`Listening on port ${PORT}…`)
-})
+app.use(express.json());
+
+app.use(router);
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
+export default app;
