@@ -1,15 +1,10 @@
 {
   "compilerOptions": {
-    "target": "ES2020",                 // Target modern JavaScript
-    "module": "ESNext",                 // Use ES Modules
-    "moduleResolution": "node",         // Resolve modules as Node.js does
-    "esModuleInterop": true,            // Enable interop between CommonJS and ES modules
+    "target": "ES6",
+    "module": "commonjs",
+    "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "outDir": "./dist",                 // Output directory
-    "rootDir": "./src"                  // Root directory for source files
+    "strict": true
   },
-  "include": ["src/**/*.ts"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["src/**/*.ts"]
 }
